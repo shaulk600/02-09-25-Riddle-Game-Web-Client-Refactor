@@ -1,4 +1,4 @@
-import React from 'react'
+
 import "./css/HomePage.css";
 
 import { Link } from 'react-router'
