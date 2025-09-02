@@ -1,0 +1,38 @@
+.PageWrapper {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+
+
+
+.enterUser {
+    width: 400px;
+    height: 200px;
+
+    border: 2px solid black ;
+    
+
+    -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 16px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 16px 5px 15px 5px rgba(0, 0, 0, 0);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.textLogin{
+    margin: 5px;
+    /* gap: 10px; לא עובד */
+
+    border: 2px solid black ;
+    border-radius: 5px;
+}
