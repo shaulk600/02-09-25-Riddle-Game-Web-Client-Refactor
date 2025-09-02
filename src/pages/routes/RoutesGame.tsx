@@ -5,7 +5,7 @@ import HomePage from "../HomePage";
 // import {  } from "";
 
 
-export default function Routes() {
+export default function RoutesGame() {
   return (
     <div>
 

@@ -1,11 +1,11 @@
-import Routes from "./pages/routes/Routes";
+import RoutesGame from "./pages/routes/RoutesGame";
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <Routes />
+      <RoutesGame />
     </>
   )
 }
