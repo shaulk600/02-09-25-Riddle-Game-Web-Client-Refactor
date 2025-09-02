@@ -2,6 +2,10 @@
 import { Route, Routes } from 'react-router';
 
 import HomePage from "../HomePage";
+import LoginRegisterPage from "../accounts/LoginRegisterPage";
+import GamePage from "../GamePage";
+
+
 // import {  } from "";
 
 
@@ -11,7 +15,14 @@ export default function RoutesGame() {
 
       <Routes>
 
+        {/* Home */}
         <Route path="/" element={<HomePage />} />
+        {/* login */}
+        <Route path="/loginMain" element={<LoginRegisterPage />} />
+        {/* Game Free */}
+        <Route path="/RiddleGame" element={<GamePage />} />
+
+        {/* <Route path="/" element={<HomePage />} /> */}
 
 
         {/* <Route path="/Setting" element={<Setting />} >
