@@ -1,5 +1,8 @@
 
-import { Routes, Route } from 'react-router';
+import { Route, Routes } from 'react-router';
+
+import HomePage from "../HomePage";
+// import {  } from "";
 
 
 export default function Routes() {
@@ -7,12 +10,13 @@ export default function Routes() {
     <div>
 
       <Routes>
-        <Route path="/" element={<Setting />} />
+
+        <Route path="/" element={<HomePage />} />
 
 
-        <Route path="/Setting" element={<Setting />} >
+        {/* <Route path="/Setting" element={<Setting />} >
           <Route path="SettingAboute" element={<SettingAboute />} />
-        </Route>
+        </Route> */}
 
 
       </Routes >
