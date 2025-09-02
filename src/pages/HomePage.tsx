@@ -7,17 +7,33 @@ import HeaderBar from "../comps/nav/HeaderBar";
 
 export default function HomePage() {
   return (
-    <div>
-      <div>
+    <div className='bodyHome'>
+
+      <div className='navBarHeader'>
         <HeaderBar />
       </div>
 
-      <div className='referringToGame'>
-        {/* אמור להיות בדיקה אם משתמש רשום */}
-        <Link to="/RiddleGame">link </Link>
+      <div className='head'>
+          <h1> Riddle  Game  </h1>
       </div>
-      <div className='referringToLogin'>
-        <Link to="/loginMain">link </Link>
+
+
+      <div className='navGame'>
+
+        <div className='referringToLogin'>
+          <button className='btnHome'>
+            <Link to="/loginMain"> login </Link>
+          </button>
+        </div>
+
+        <div className='referringToGame'>
+          {/* אמור להיות בדיקה אם משתמש רשום */}
+          <button className='btnHome'>
+            <Link to="/RiddleGame"> play Game </Link>
+          </button>
+        </div>
+
+
       </div>
 
     </div>
