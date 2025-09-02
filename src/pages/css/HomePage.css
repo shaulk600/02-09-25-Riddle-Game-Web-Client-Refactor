@@ -1,0 +1,58 @@
+.bodyHome{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navBarHeader {
+    min-width: 100%;
+    /* ? */
+    min-height: 20%;
+
+
+}
+
+.navGame {
+    width: 250px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    border-radius: 5px solid black;
+}
+
+.btnHome {
+    background-color: white;
+    border-radius: 5px solid black;
+}
+
+.btnHome:hover {
+    background-color: wheat;
+    border-radius: 10px solid black;
+}
+
+.referringToGame {}
+
+
+.referringToLogin {}
+
+
+
+/* end finish page */
+@media screen and (min-width: 100px)and(min-width: 500px) {
+    .navGame {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        /* מעמיד אלמנטים באמצע הדף */
+        align-items: center;
+        /* זה צריך להיות ארוך אבל באמצע העמוד - לבדוק מה עושה את זה */
+
+    }
+}
