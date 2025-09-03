@@ -49,9 +49,7 @@ export default function Login() {
                         </div>
 
                         <div className='textLogin'>
-                            <button className='btnAccess'>
-                                Login
-                            </button>
+                            <button className='btnAccess'> Login </button>
                         </div>
 
                         <div id='extensions'>
