@@ -1,0 +1,27 @@
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 2px solid rgb(61, 209, 118);
+
+}
+
+nav{
+    display: flex;
+    gap: 15px;
+}
+
+.btnBorder{
+    display: flex;
+    gap: 10px;
+
+    
+}
+.btnHeader{
+    background-color: rgb(61, 209, 118);
+    color: wheat;
+    border: none;
+    border-radius: 25px;
+}
