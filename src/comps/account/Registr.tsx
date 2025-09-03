@@ -1,4 +1,4 @@
-
+import  "./Registr.css";
 
 export default function Registr() {
     return (
@@ -16,6 +16,9 @@ export default function Registr() {
                 <div className='textRegister'>
                     <label htmlFor="pass"> password </label>
                     <input type="password" id='pass' name='password' required />
+                </div>
+                <div>
+                    <button>save</button>
                 </div>
             </div>
         </>
