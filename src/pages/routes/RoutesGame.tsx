@@ -1,9 +1,9 @@
 
 import { Route, Routes } from 'react-router';
 
-import HomePage from "../HomePage";
+import HomePage from "../home/HomePage";
 import LoginRegisterPage from "../accounts/LoginRegisterPage";
-import GamePage from "../GamePage";
+import GamePage from "../game/GamePage";
 
 
 // import {  } from "";
