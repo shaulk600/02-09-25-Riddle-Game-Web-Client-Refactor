@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 import "./Login.css";
 
 export default function Login() {
+
     const [onEmail, setOnEmail] = useState(false);
     const toogle = () => setOnEmail(o => !o)
 
@@ -13,6 +15,11 @@ export default function Login() {
         onEmail ? accountEmail?.classList.remove('emailLoginRegular') : accountEmail?.classList.add('emailLoginRegular');
     }, [onEmail])
 
+
+    // כפתור שליחה הלאה
+    const submitCreate = () => {
+        console.log(`hii`);
+    }
     return (
         <>
             <section id='loginContainer'>
@@ -49,11 +56,12 @@ export default function Login() {
                         </div>
 
                         <div className='textLogin'>
-                            <button className='btnAccess'> Login </button>
+                            <button type="submit" className='btnAccess' onSubmit={() => submitCreate}> Login </button>
+
                         </div>
 
                         <div id='extensions'>
-                            <div> <a href="">Forgot Password</a> </div>
+                            <div> <Link to=""> שכחתי סיסמא</Link> </div>
                             <label htmlFor="rememberMe"> Remember Me </label>
                             <input type="checkbox" name="rememberMe" id="rememberMe" />
                         </div>

@@ -1,9 +1,10 @@
 
-import "./css/HomePage.css";
+import "./HomePage.css";
 
 import { Link } from 'react-router'
 
-import HeaderBar from "../comps/nav/HeaderBar";
+import HeaderBar from "../../comps/nav/HeaderBar.tsx";
+
 
 export default function HomePage() {
   return (
@@ -14,7 +15,7 @@ export default function HomePage() {
       </div>
 
       <div className='head'>
-          <h1> Riddle  Game  </h1>
+        <h1> Riddle  Game  </h1>
       </div>
 
 
@@ -27,7 +28,8 @@ export default function HomePage() {
         </div>
 
         <div className='referringToGame'>
-          {/* אמור להיות בדיקה אם משתמש רשום */}
+          {/*- useContent אמור להיות בדיקה אם משתמש רשום */}
+          {/* לא בטוח פה אגב */}
           <button className='btnHome'>
             <Link to="/RiddleGame"> play Game </Link>
           </button>
