@@ -7,20 +7,32 @@ import { createPlayer } from "../../logic/api/PlayerApi";
 export default function LoginComps() {
 
     const [onEmail, setOnEmail] = useState(false);
-    const toggleEmail = () => setOnEmail((prev) => !prev);
+    const toggleEmail = () => setOnEmail((prev) => !prev); //פעולת הלחיצה בפועל
+
+    const isInputEmpty = (inputUserName: string,
+        inputPassword: string,
+        inputEmail: string
+    ): boolean => {
+        return (
+            // אם אחד מהם לא שווה למשהו - התנאי הראשון - כי זה או זה או זה
+            (inputUserName.trim() === "" && inputEmail.trim() === "") ||
+            (inputPassword.trim() === "")
+        );
+    };
 
     // send from ..
     const submitCreate = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault(); // מונע ריענון דף
+        const form = e.currentTarget; // יוצר תהליך ראשוני ..
 
-        const form = e.currentTarget;
-        const inputUserName = form.username.value;
+        const inputUserName = form.username ? form.username.value : '';
         const inputPassword = form.password.value;
-        const inputEmail = form.email.value;
+        const inputEmail = form.email ? form.email.value : '';
 
         if (isInputEmpty(inputUserName, inputPassword, inputEmail)) {
             return window.alert("Enter again");
         }
+
         const timeNow = new Date();
         const newPlayer: Player = {
             id: undefined,
@@ -31,77 +43,103 @@ export default function LoginComps() {
             bestTime: "0",
         };
 
+        // Featch ..
         const idData = await createPlayer(newPlayer);
+        // if (idData['_id']) {
+        // return window.alert("Created player"); 
+        // }   
+
+        // לשמור בלוקאל סטורג' טוקן או פרטי שחקן - דבר הבא -אחרי צהרים
         console.log("Created player:", idData);
     };
 
-    const isInputEmpty = (
-        inputUserName: string,
-        inputPassword: string,
-        inputEmail: string
-    ): boolean => {
-        return (
-            inputUserName.trim() === "" ||
-            inputPassword.trim() === "" ||
-            inputEmail.trim() === ""
-        );
-    };
-
+    // login-wrapper - בשביל המובייל
     return (
-        <section id="loginContainer">
-            <header id="AuthHeader">
-                <img src="" alt="logo" />
-                <h1>Login</h1>
-                <p>Enter user details</p>
-            </header>
+        <div className="login-wrapper">
 
-            <div id="customLogin">
-                <form onSubmit={submitCreate}>
-                    <label htmlFor="accountEmail"> Account for Email </label>
-                    <input
-                        type="checkbox"
-                        id="accountEmail"
-                        checked={onEmail}
-                        onChange={toggleEmail}
-                    />
+            <div id="loginContainerComps">
+                {/* header */}
+                <div id="titleLoginComps">
+                    <h1 className="login-title" >Login</h1>
+                    <p className="login-subtitle">Enter your details to continue</p>
+                </div>
+                {/* body */}
+                <form onSubmit={submitCreate} className="login-form">
+                    <div className="input-toggle">
+                        <label htmlFor="accountEmail">
+                            Account In Email
+                        </label>
+
+                        <input
+                            type="checkbox"
+                            id="accountEmail"
+                            checked={onEmail}
+                            onChange={toggleEmail}
+                        />
+                    </div>
 
                     {onEmail && (
-                        <div id="emailLogin" className="textLogin">
-                            <label htmlFor="email">email to account</label>
-                            <input type="text" id="email" name="email" />
+                        <div id="divBoxEmail" className="boxLoginComps">
+                            <label htmlFor="email"> Email </label>
+                            <input
+                                type="text"
+                                id="email"
+                                name="email"
+                                placeholder="example@gmail.com"
+                            />
                         </div>
                     )}
 
-                    <div className="textLogin">
-                        <label htmlFor="username">name</label>
-                        <input type="text" id="username" name="username" required />
+                    {!onEmail && (
+                        <div className="boxLoginComps">
+                            <label htmlFor="username" >
+                                Name
+                            </label>
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder="Your Name"
+                            />
+                        </div>
+                    )}
+
+                    <div className="boxLoginComps">
+                        <label htmlFor="password" >
+                            Password
+                        </label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="••••••••"
+                            required
+                        />
                     </div>
 
-                    <div className="textLogin">
-                        <label htmlFor="password">password</label>
-                        <input type="password" id="password" name="password" required />
-                    </div>
-
-                    <div className="textLogin">
-                        <button type="submit" className="btnAccess">
+                    <div id="boxSend">
+                        <button type="submit" className="btn-login">
                             Login
                         </button>
                     </div>
+                    <br />
 
-                    <div id="extensions">
-                        <div>
-                            <Link to="">שכחתי סיסמא</Link>
-                        </div>
-
-                        <label htmlFor="rememberMe"> Remember Me </label>
-                        <input
-                            type="checkbox"
-                            name="rememberMe"
-                            id="rememberMe" />
-
+                    <div id="boxExtensions">
+                        <Link to="" className="link-forgot">
+                            Forget Password?
+                        </Link>
+                        <label htmlFor="rememberMe" className="remember-label">
+                            <input type="checkbox" name="rememberMe" id="rememberMe" /> Remember Me
+                        </label>
                     </div>
+
+                    {/* end variable login page */}
+
                 </form>
-            </div>
-        </section>
+
+
+                {/* end page: */}
+            </div >
+        </div >
     );
 }

@@ -1,8 +1,8 @@
 
-import Login from "../../comps/account/LoginComps";
-import FooterPage from "../../comps/footer/FooterPage";
-// import Registr from "../../comps/account/Registr";
-import HeaderBar from "../../comps/nav/HeaderBar";
+import LoginComps from "../../comps/account/LoginComps";
+// import FooterPage from "../../comps/footer/FooterPage";
+
+// import HeaderBar from "../../comps/nav/HeaderBar";
 import "./LoginRegisterPage.css";
 
 
@@ -13,18 +13,13 @@ export default function LoginRegisterPage() {
 
       <div className='PageWrapper'>
 
-        <HeaderBar />
-
+        {/* <HeaderBar /> */}
+        <hr />
         <br />
-
-        <Login />
-
+        <LoginComps />
         <br />
-        <br />
-        
-        <section>
-          <FooterPage />
-        </section>
+        <hr />
+        {/* <FooterPage /> */}
 
 
       </div >
