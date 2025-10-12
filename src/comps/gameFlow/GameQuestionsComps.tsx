@@ -1,15 +1,13 @@
+import { useContext } from "react";
 import "./GameQuestionsComps.css";
+import { PlayerContext } from "../../pages/routes/RoutesGame";
 
 export default function GameQuestionsComps() {
+    const playerObj = useContext(PlayerContext);
 
-    const obj = {
-        title: "",
-        anser: "",
-        
 
-    }
     const receivingAnswer = () => {
-
+        
     }
 
     return (
@@ -17,7 +15,7 @@ export default function GameQuestionsComps() {
             <section>
 
                 <h1>{ }</h1>
-                <input type="text" required/>
+                <input type="text" required />
                 <button onClick={ }></button>
 
             </section>

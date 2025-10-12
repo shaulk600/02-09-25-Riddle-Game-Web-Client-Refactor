@@ -1,6 +1,6 @@
-import "./Registr.css";
+import "./RegistrComps.css";
 
-export default function Registr() {
+export default function RegistrComps() {
     const submitPage = () => {
 
     }
