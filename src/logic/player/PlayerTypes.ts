@@ -7,3 +7,7 @@ export type Player = {
     bestTime: string
 }
 
+export type PlayerLogin = {
+    usernameemail: string,
+    password: string
+}
