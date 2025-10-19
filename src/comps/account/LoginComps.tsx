@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import "./LoginComps.css";
-import type { Player } from "../../logic/player/PlayerTypes";
-import { createPlayer } from "../../logic/api/PlayerApi";
+import type { Player, PlayerLogin } from "../../logic/player/PlayerTypes";
+import { createPlayer,loginPlayer } from "../../logic/api/PlayerApi";
 
 export default function LoginComps() {
 
@@ -25,26 +25,32 @@ export default function LoginComps() {
         e.preventDefault(); // מונע ריענון דף
         const form = e.currentTarget; // יוצר תהליך ראשוני ..
 
-        const inputUserName = form.username ? form.username.value : '';
+        const inputUserName = form.username ? form.username.value : "";
         const inputPassword = form.password.value;
-        const inputEmail = form.email ? form.email.value : '';
+        const inputEmail = form.email ? form.email.value : "";
 
         if (isInputEmpty(inputUserName, inputPassword, inputEmail)) {
             return window.alert("Enter again");
         }
 
-        const timeNow = new Date();
-        const newPlayer: Player = {
-            id: undefined,
-            userName: inputUserName,
-            password: inputPassword,
-            email: inputEmail,
-            createdAt: timeNow,
-            bestTime: "0",
-        };
+        const playerLogin: PlayerLogin = {
+            usernameemail: inputUserName === "" ? inputEmail : inputUserName,
+            password: inputPassword
+        }
+
+        // פונקציה שמתאימה להרשמה - לא להתחברות !!!
+        // const timeNow = new Date();
+        // const newPlayer: Player = {
+        //     id: undefined,
+        //     userName: inputUserName,
+        //     password: inputPassword,
+        //     email: inputEmail,
+        //     createdAt: timeNow,
+        //     bestTime: "0",
+        // };
 
         // Featch ..
-        const idData = await createPlayer(newPlayer);
+        const idData = await loginPlayer(playerLogin);
         // if (idData['_id']) {
         // return window.alert("Created player"); 
         // }   
