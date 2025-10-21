@@ -1,17 +1,32 @@
+export enum CategoriesType {
+    EAZY = "EAZY",
+    MEDIUM = "MEDIUM",
+    HARD = "HARD"
+}
+// const a = CategoriesType.HARD;
+
+export enum CurrectAnswer {
+    A = 1,
+    B = 2,
+    C = 3
+}
+
 
 export type Riddle = {
-    id?: string,
+    _id?: string,
     title: string,
-    question: string,
+    category: CategoriesType,
     answer: string
 }
 export type RiddleMultipleAnswer = {
-    id?: string,
+    _id?: string,
     title: string,
-    question: string,
+    category: CategoriesType,
     answerA: string,
     answerB: string,
-    answerC: string
+    answerC: string,
+    currectAnswer: CurrectAnswer,
+
 }
 
 
