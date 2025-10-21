@@ -3,7 +3,7 @@ import "./GamePage.css";
 import HeaderBar from "../../comps/nav/HeaderBar";
 import QuestionCardComps from "../../comps/questionCard/QuestionCardComps";
 
-import { CategoriesType, type RiddleMultipleAnswer, } from "../../logic/riddle/RiddleTypes";
+import { CategoriesType, type RiddleMultipleAnswer } from "../../logic/riddle/RiddleTypes";
 export default function GamePage() {
   // export default function GamePage({ a }: { a: PropsWithChildren }) {
   return (
@@ -16,7 +16,8 @@ export default function GamePage() {
             category: CategoriesType.EAZY,
             answerA: "לונדון",
             answerB: "פריז",
-            answerC: "רומא"
+            answerC: "רומא",
+            currectAnswer: 2
           }}
         />
 
